@@ -1,20 +1,40 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-	<meta charset="UTF-8">
-	<title>Kamień, papier, nożyce</title>
-	<link rel="stylesheet" href="css/style.css">
-</head>
-<body>
-	<div class="container">
-		<div id="buttons">
-			<button id="play-rock">Kamień</button>
-			<button id="play-paper">Papier</button>
-			<button id="play-scissors">Nożyce</button>
-		</div>
-		<div id="messages"></div>
-	</div>
-	<script src="js/functions.js"></script>
-	<script src="js/script.js"></script>
-</body>
+    <head>
+        <meta charset="UTF-8">
+        <title>Kamień, papier, nożyce</title>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link
+            rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link
+            href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;1,300&family=Secular+One&display=swap"
+            rel="stylesheet">
+        <link rel="stylesheet" href="css/style.css">
+    </head>
+    <body>
+        <div class="container">
+            <div class="header">
+                <h2>Witaj w grze!</h2>
+                <h1>kamien   papier   nożyce</h1>
+            </div>
+            <div id="buttons">
+                <button class="btn" id="play-rock">Kamień</button>
+                <button class="btn" id="play-paper">Papier</button>
+                <button class="btn" id="play-scissors">Nożyce</button>
+            </div>
+            <div id="messages"></div>
+			<div class="game-info">
+				<p>Zasady gry: Grasz przeciwko komuterowi. Kliknij jeden z poniższych przycisków
+                    aby wybrać kamien, papier lub nożyce. Komputer wylosuje swój wybór i poda wynik.</p>
+                <ul>
+                    <li>remis – jeśli obaj gracze wybrali ten sam ruch,</li>
+                    <li>wygrana gracza, który zagrał papier, jeśli drugi gracz zagrał kamień,</li>
+                    <li>wygrana gracza, który zagrał kamień, jeśli drugi gracz zagrał nożyce,</li>
+                    <li>wygrana gracza, który zagrał nożyce, jeśli drugi gracz zagrał papier.</li>
+                </ul>
+			</div>
+        </div>
+        <script src="js/functions.js"></script>
+        <script src="js/script.js"></script>
+    </body>
 </html>

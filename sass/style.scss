@@ -1,0 +1,62 @@
+/* Variables */
+
+$font-text: 'Cormorant Garamond', serif;
+$font-header: 'Secular One', sans-serif;
+
+/* Global */
+
+body {
+    background: beige;
+    font-family: $font-text;
+    font-size: 16px;
+}
+
+.container {
+    margin: 0 auto;
+    max-width: 900px;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.btn {
+    width: 150px;
+    height: 50px;
+    background: olive;
+    border-radius: 10px;
+    margin: 0 15px;
+    font-family: $font-header;
+    text-transform: uppercase;
+    font-size: 20px;
+}
+
+/* Header */
+
+.header {
+
+    h1 {
+        margin: 25px auto;
+        text-align: center;
+        font-size: 60px;
+        font-family: $font-header;
+        text-transform: uppercase;
+    }
+
+    h2 {
+        margin: 5px auto;
+        text-align: center;
+        font-size: 30px;
+    }
+}
+
+/* Game */
+
+#buttons {
+    display: flex;
+    justify-content: center;
+}
+
+#messages {
+    height: 90px;
+}
