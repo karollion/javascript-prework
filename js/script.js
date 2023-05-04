@@ -23,11 +23,7 @@ function playGame(playerInput) {
             printMessage('Ty wygrywasz!');
         } else if (argComputerMove == 'kamień' && argPlayerMove == 'nożyce') {
             printMessage('Ja wygrywam!');
-        } else if (argComputerMove == 'kamień' && argPlayerMove == 'kamień') {
-            printMessage('Remis');
-        } else if (argComputerMove == 'papier' && argPlayerMove == 'papier') {
-            printMessage('Remis');
-        } else if (argComputerMove == 'nożyce' && argPlayerMove == 'nożyce') {
+        } else if (argComputerMove == argPlayerMove) {
             printMessage('Remis');
         } else if (argComputerMove == 'papier' && argPlayerMove == 'nożyce') {
             printMessage('Ty wygrywasz!');
