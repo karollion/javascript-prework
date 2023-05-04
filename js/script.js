@@ -1,5 +1,8 @@
 function playGame(playerInput) {
     clearMessages();
+    clearResult();
+    clearRound();
+
     console.log('Gracz wpisał: ' + playerInput);
 
     function getMoveName(argMoveId) {
@@ -20,21 +23,27 @@ function playGame(playerInput) {
         console.log('moves:', argComputerMove, argPlayerMove);
 
         if (argComputerMove == 'kamień' && argPlayerMove == 'papier') {
-            printMessage('Ty wygrywasz!');
+            printMessage('wygrana');
+            pointsPlayer ++;
         } else if (argComputerMove == 'kamień' && argPlayerMove == 'nożyce') {
-            printMessage('Ja wygrywam!');
+            printMessage('przegrana');
+            pointsComputer ++;
         } else if (argComputerMove == argPlayerMove) {
-            printMessage('Remis');
+            printMessage('remis');
         } else if (argComputerMove == 'papier' && argPlayerMove == 'nożyce') {
-            printMessage('Ty wygrywasz!');
+            printMessage('wygrana');
+            pointsPlayer ++;
         } else if (argComputerMove == 'papier' && argPlayerMove == 'kamień') {
-            printMessage('Ja wygrywam!');
+            printMessage('przegrana');
+            pointsComputer ++;
         } else if (argComputerMove == 'nożyce' && argPlayerMove == 'papier') {
-            printMessage('Ja wygrywam!');
+            printMessage('przegrana');
+            pointsComputer ++;
         } else if (argComputerMove == 'nożyce' && argPlayerMove == 'kamień') {
-            printMessage('Ty wygrywasz!');
+            printMessage('wygrana');
+            pointsPlayer ++;
         } else if (argPlayerMove == 'nieznany ruch') {
-            printMessage('Ja wygrywam! podałeś niewłaściwy ruch');
+            printMessage('przegrana');
         }
     }
 
@@ -42,13 +51,25 @@ function playGame(playerInput) {
     console.log('Wylosowana liczba to: ' + randomNumber);
 
     let computerMove = getMoveName(randomNumber);
-    printMessage('Mój ruch to: ' + computerMove);
+    printMessage(computerMove);
 
     let playerMove = getMoveName(playerInput);
-    printMessage('Twój ruch to: ' + playerMove);
+    printMessage(playerMove);
 
     displayResult(computerMove, playerMove);
+    
+    let score = (pointsComputer + ' - ' + pointsPlayer);
+    printResult(score);
+
+    rounds ++;
+    printRound(rounds);
 }
+
+let pointsComputer = 0;
+let pointsPlayer = 0;
+
+let rounds = 0;
+
 
 document.getElementById('play-rock').addEventListener('click', function(){
     playGame(1);

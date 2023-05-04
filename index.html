@@ -12,28 +12,62 @@
         <link rel="stylesheet" href="css/style.css">
     </head>
     <body>
-        <div class="container">
-            <div class="header">
-                <h2>Witaj w grze!</h2>
-                <h1>kamien   papier   nożyce</h1>
+        <header>
+            <div class="container">
+                <div>
+                    <h2>Witaj w grze!</h2>
+                    <h1>kamien   papier   nożyce</h1>
+                </div>
             </div>
-            <div id="buttons">
-                <button type="button" class="btn" id="play-rock">Kamień</button>
-                <button type="button" class="btn" id="play-paper">Papier</button>
-                <button type="button" class="btn" id="play-scissors">Nożyce</button>
+        </header>
+
+        <section>
+            <div class="container">
+                <div id="buttons">
+                    <button type="button" class="btn" id="play-rock">Kamień</button>
+                    <button type="button" class="btn" id="play-paper">Papier</button>
+                    <button type="button" class="btn" id="play-scissors">Nożyce</button>
+                </div>
+                <div class="game-scores row">
+                    <div class="col">
+                        <h3>Ruchy graczy</h3>
+                        <div class="inter columns2" >
+                            <div id="players">
+                                <p>Komputer</p>
+                                <p>Gracz</p>
+                                <p>Wynik</p>
+                            </div>
+                            <div id="messages"></div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <h3>Wynik gry</h3>
+                        <div class="inter result-round" id="result"><p>0 - 0</p></div>
+                    </div>
+                    <div class="col">
+                        <h3>Runda</h3>
+                        <div class="inter result-round" id="round"><p>0</p></div>
+                    </div>
+                </div>
             </div>
-            <div id="messages"></div>
-			<div class="game-info">
-				<p>Zasady gry: Grasz przeciwko komuterowi. Kliknij jeden z poniższych przycisków
-                    aby wybrać kamien, papier lub nożyce. Komputer wylosuje swój wybór i poda wynik.</p>
-                <ul>
-                    <li>remis – jeśli obaj gracze wybrali ten sam ruch,</li>
-                    <li>wygrana gracza, który zagrał papier, jeśli drugi gracz zagrał kamień,</li>
-                    <li>wygrana gracza, który zagrał kamień, jeśli drugi gracz zagrał nożyce,</li>
-                    <li>wygrana gracza, który zagrał nożyce, jeśli drugi gracz zagrał papier.</li>
-                </ul>
-			</div>
-        </div>
+        </section>
+
+        <section>
+            <div class="container">
+                <div class="game-info">
+                    <h3>Zasady gry:</h3>
+                    <p>Grasz przeciwko komuterowi. Kliknij jeden z poniższych przycisków
+                        aby wybrać kamien, papier lub nożyce. Komputer wylosuje swój wybór i poda wynik.</p>
+                    <ul>
+                        <li>remis – jeśli obaj gracze wybrali ten sam ruch,</li>
+                        <li>wygrana gracza, który zagrał papier, jeśli drugi gracz zagrał kamień,</li>
+                        <li>wygrana gracza, który zagrał kamień, jeśli drugi gracz zagrał nożyce,</li>
+                        <li>wygrana gracza, który zagrał nożyce, jeśli drugi gracz zagrał papier.</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
         <script src="js/functions.js"></script>
         <script src="js/script.js"></script>
     </body>

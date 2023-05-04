@@ -1,39 +1,69 @@
 /* Variables */
 
+$color-main: #f39c12;
+$color-light: #ecf0f1;
+$color-dark: #202e3b;
+
 $font-text: 'Cormorant Garamond', serif;
 $font-header: 'Secular One', sans-serif;
 
 /* Global */
 
+*,
+*::after,
+*::before {
+    box-sizing: border-box;
+}
+
 body {
-    background: beige;
+    background: $color-light;
     font-family: $font-text;
-    font-size: 16px;
+    font-size: 18px;
+    color: $color-dark;
+    margin: 0;
+    padding: 0;
 }
 
 .container {
     margin: 0 auto;
     max-width: 900px;
-    height: 100vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
 }
 
+.row {
+    display: flex;
+    justify-content: center;
+    margin: 30px auto;
+    padding: 0;
+}
+
+.col {
+    width: 200px;
+    margin: 10px;
+    padding: 0;
+    border: 2px solid $color-dark;
+    border-radius: 5px;
+    background: $color-main;
+}
+
 .btn {
     width: 150px;
     height: 50px;
-    background: olive;
+    background: $color-main;
     border-radius: 10px;
     margin: 0 15px;
     font-family: $font-header;
     text-transform: uppercase;
     font-size: 20px;
+    color: $color-light;
 }
 
 /* Header */
 
-.header {
+header {
+    margin-bottom: 50px;
 
     h1 {
         margin: 25px auto;
@@ -44,7 +74,7 @@ body {
     }
 
     h2 {
-        margin: 5px auto;
+        margin: 35px auto 5px auto;
         text-align: center;
         font-size: 30px;
     }
@@ -56,7 +86,42 @@ body {
     display: flex;
     justify-content: center;
 }
+.game-scores {
 
-#messages {
-    height: 90px;
+    .columns2 {
+        display: flex;
+    }
+    .inter {
+        margin: 0;
+        padding: 0;
+        background: $color-light;
+        border-top: 2px solid $color-dark;
+        width: 100%;
+    }
+
+    h3 {
+        text-align: center;
+    }
+
+    #players {
+        margin: 0;
+        padding: 0 0 0 5px;
+        width: 50%;  
+    }
+
+    #messages {
+        width: 50%;
+    }
+
+    .result-round{
+        text-align: center;
+        font-size: 48px;
+        height: 140px;
+        line-height: 140px;
+
+        p {
+            margin: 0;
+            font-family: $font-header;
+        }
+    }
 }

@@ -1,41 +1,69 @@
 /* Variables */
 /* Global */
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+}
+
 body {
-  background: beige;
+  background: #ecf0f1;
   font-family: "Cormorant Garamond", serif;
-  font-size: 16px;
+  font-size: 18px;
+  color: #202e3b;
+  margin: 0;
+  padding: 0;
 }
 
 .container {
   margin: 0 auto;
   max-width: 900px;
-  height: 100vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
 }
 
+.row {
+  display: flex;
+  justify-content: center;
+  margin: 30px auto;
+  padding: 0;
+}
+
+.col {
+  width: 200px;
+  margin: 10px;
+  padding: 0;
+  border: 2px solid #202e3b;
+  border-radius: 5px;
+  background: #f39c12;
+}
+
 .btn {
   width: 150px;
   height: 50px;
-  background: olive;
+  background: #f39c12;
   border-radius: 10px;
   margin: 0 15px;
   font-family: "Secular One", sans-serif;
   text-transform: uppercase;
   font-size: 20px;
+  color: #ecf0f1;
 }
 
 /* Header */
-.header h1 {
+header {
+  margin-bottom: 50px;
+}
+header h1 {
   margin: 25px auto;
   text-align: center;
   font-size: 60px;
   font-family: "Secular One", sans-serif;
   text-transform: uppercase;
 }
-.header h2 {
-  margin: 5px auto;
+header h2 {
+  margin: 35px auto 5px auto;
   text-align: center;
   font-size: 30px;
 }
@@ -46,8 +74,36 @@ body {
   justify-content: center;
 }
 
-#messages {
-  height: 90px;
+.game-scores .columns2 {
+  display: flex;
+}
+.game-scores .inter {
+  margin: 0;
+  padding: 0;
+  background: #ecf0f1;
+  border-top: 2px solid #202e3b;
+  width: 100%;
+}
+.game-scores h3 {
+  text-align: center;
+}
+.game-scores #players {
+  margin: 0;
+  padding: 0 0 0 5px;
+  width: 50%;
+}
+.game-scores #messages {
+  width: 50%;
+}
+.game-scores .result-round {
+  text-align: center;
+  font-size: 48px;
+  height: 140px;
+  line-height: 140px;
+}
+.game-scores .result-round p {
+  margin: 0;
+  font-family: "Secular One", sans-serif;
 }
 
-/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi4uL3Nhc3Mvc3R5bGUuc2NzcyIsInN0eWxlLmNzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQSxjQUFBO0FBS0EsV0FBQTtBQUVBO0VBQ0ksaUJBQUE7RUFDQSx3Q0FQUTtFQVFSLGVBQUE7QUNKSjs7QURPQTtFQUNJLGNBQUE7RUFDQSxnQkFBQTtFQUNBLGFBQUE7RUFDQSxhQUFBO0VBQ0Esc0JBQUE7RUFDQSx1QkFBQTtBQ0pKOztBRE9BO0VBQ0ksWUFBQTtFQUNBLFlBQUE7RUFDQSxpQkFBQTtFQUNBLG1CQUFBO0VBQ0EsY0FBQTtFQUNBLHNDQXpCVTtFQTBCVix5QkFBQTtFQUNBLGVBQUE7QUNKSjs7QURPQSxXQUFBO0FBSUk7RUFDSSxpQkFBQTtFQUNBLGtCQUFBO0VBQ0EsZUFBQTtFQUNBLHNDQXRDTTtFQXVDTix5QkFBQTtBQ1BSO0FEVUk7RUFDSSxnQkFBQTtFQUNBLGtCQUFBO0VBQ0EsZUFBQTtBQ1JSOztBRFlBLFNBQUE7QUFFQTtFQUNJLGFBQUE7RUFDQSx1QkFBQTtBQ1ZKOztBRGFBO0VBQ0ksWUFBQTtBQ1ZKIiwiZmlsZSI6InN0eWxlLmNzcyJ9 */
+/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi4uL3Nhc3Mvc3R5bGUuc2NzcyIsInN0eWxlLmNzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQSxjQUFBO0FBU0EsV0FBQTtBQUVBOzs7RUFHSSxzQkFBQTtBQ1JKOztBRFdBO0VBQ0ksbUJBZlU7RUFnQlYsd0NBYlE7RUFjUixlQUFBO0VBQ0EsY0FqQlM7RUFrQlQsU0FBQTtFQUNBLFVBQUE7QUNSSjs7QURXQTtFQUNJLGNBQUE7RUFDQSxnQkFBQTtFQUNBLGFBQUE7RUFDQSxzQkFBQTtFQUNBLHVCQUFBO0FDUko7O0FEV0E7RUFDSSxhQUFBO0VBQ0EsdUJBQUE7RUFDQSxpQkFBQTtFQUNBLFVBQUE7QUNSSjs7QURXQTtFQUNJLFlBQUE7RUFDQSxZQUFBO0VBQ0EsVUFBQTtFQUNBLHlCQUFBO0VBQ0Esa0JBQUE7RUFDQSxtQkE3Q1M7QUNxQ2I7O0FEV0E7RUFDSSxZQUFBO0VBQ0EsWUFBQTtFQUNBLG1CQW5EUztFQW9EVCxtQkFBQTtFQUNBLGNBQUE7RUFDQSxzQ0FqRFU7RUFrRFYseUJBQUE7RUFDQSxlQUFBO0VBQ0EsY0F4RFU7QUNnRGQ7O0FEV0EsV0FBQTtBQUVBO0VBQ0ksbUJBQUE7QUNUSjtBRFdJO0VBQ0ksaUJBQUE7RUFDQSxrQkFBQTtFQUNBLGVBQUE7RUFDQSxzQ0FoRU07RUFpRU4seUJBQUE7QUNUUjtBRFlJO0VBQ0ksMEJBQUE7RUFDQSxrQkFBQTtFQUNBLGVBQUE7QUNWUjs7QURjQSxTQUFBO0FBRUE7RUFDSSxhQUFBO0VBQ0EsdUJBQUE7QUNaSjs7QURnQkk7RUFDSSxhQUFBO0FDYlI7QURlSTtFQUNJLFNBQUE7RUFDQSxVQUFBO0VBQ0EsbUJBN0ZNO0VBOEZOLDZCQUFBO0VBQ0EsV0FBQTtBQ2JSO0FEZ0JJO0VBQ0ksa0JBQUE7QUNkUjtBRGlCSTtFQUNJLFNBQUE7RUFDQSxrQkFBQTtFQUNBLFVBQUE7QUNmUjtBRGtCSTtFQUNJLFVBQUE7QUNoQlI7QURtQkk7RUFDSSxrQkFBQTtFQUNBLGVBQUE7RUFDQSxhQUFBO0VBQ0Esa0JBQUE7QUNqQlI7QURtQlE7RUFDSSxTQUFBO0VBQ0Esc0NBcEhFO0FDbUdkIiwiZmlsZSI6InN0eWxlLmNzcyJ9 */
