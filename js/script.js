@@ -66,10 +66,9 @@ const playGame = function(playerInput) {
     printRound(rounds);
 }
 
-let pointsComputer = 0;
-let pointsPlayer = 0;
-
-let rounds = 0;
+let pointsComputer = 0,
+    pointsPlayer = 0,
+    rounds = 0;
 
 
 document.getElementById('play-rock').addEventListener('click', function(){
