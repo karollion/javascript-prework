@@ -52,13 +52,13 @@ const playGame = function(playerInput) {
     console.log('Wylosowana liczba to: ' + randomNumber);
 
     const computerMove = getMoveName(randomNumber);
+    printMessage(computerMove, 'messages');
     const playerMove = getMoveName(playerInput);
+    printMessage(playerMove, 'messages');
     displayResult(computerMove, playerMove);
     const score = (pointsComputer + ' - ' + pointsPlayer);
     
     rounds ++;
-    printMessage(playerMove, 'messages');
-    printMessage(computerMove, 'messages');
     printMessage(score, 'result');
     printMessage(rounds, 'round');
 }
