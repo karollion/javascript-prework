@@ -14,7 +14,7 @@ const playGame = function(playerInput) {
         } else if (argMoveId == 3) {
             return 'nożyce';
         } else {
-            printMessage('Nie znam ruchu o id ' + argMoveId + '.');
+            printMessage('Nie znam ruchu o id ' + argMoveId + '.', 'messages');
             return 'nieznany ruch';
         }
     }
@@ -24,27 +24,27 @@ const playGame = function(playerInput) {
         console.log('moves:', argComputerMove, argPlayerMove);
 
         if (argComputerMove == 'kamień' && argPlayerMove == 'papier') {
-            printMessage('wygrana');
+            printMessage('wygrana', 'messages');
             pointsPlayer ++;
         } else if (argComputerMove == 'kamień' && argPlayerMove == 'nożyce') {
-            printMessage('przegrana');
+            printMessage('przegrana', 'messages');
             pointsComputer ++;
         } else if (argComputerMove == argPlayerMove) {
-            printMessage('remis');
+            printMessage('remis', 'messages');
         } else if (argComputerMove == 'papier' && argPlayerMove == 'nożyce') {
-            printMessage('wygrana');
+            printMessage('wygrana', 'messages');
             pointsPlayer ++;
         } else if (argComputerMove == 'papier' && argPlayerMove == 'kamień') {
-            printMessage('przegrana');
+            printMessage('przegrana', 'messages');
             pointsComputer ++;
         } else if (argComputerMove == 'nożyce' && argPlayerMove == 'papier') {
-            printMessage('przegrana');
+            printMessage('przegrana', 'messages');
             pointsComputer ++;
         } else if (argComputerMove == 'nożyce' && argPlayerMove == 'kamień') {
-            printMessage('wygrana');
+            printMessage('wygrana', 'messages');
             pointsPlayer ++;
         } else if (argPlayerMove == 'nieznany ruch') {
-            printMessage('przegrana');
+            printMessage('przegrana', 'messages');
         }
     }
 
@@ -52,18 +52,18 @@ const playGame = function(playerInput) {
     console.log('Wylosowana liczba to: ' + randomNumber);
 
     const computerMove = getMoveName(randomNumber);
-    printMessage(computerMove);
+    printMessage(computerMove, 'messages');
 
     const playerMove = getMoveName(playerInput);
-    printMessage(playerMove);
+    printMessage(playerMove, 'messages');
 
     displayResult(computerMove, playerMove);
     
     const score = (pointsComputer + ' - ' + pointsPlayer);
-    printResult(score);
+    printMessage(score, 'result');
 
     rounds ++;
-    printRound(rounds);
+    printMessage(rounds, 'round');
 }
 
 const startGame = function(move, idMove){
