@@ -1,5 +1,5 @@
 {
-function playGame(playerInput) {
+const playGame = function(playerInput) {
     clearMessages();
     clearResult();
     clearRound();
@@ -19,7 +19,7 @@ function playGame(playerInput) {
         }
     }
 
-    function displayResult(argComputerMove, argPlayerMove) {
+     const displayResult = function(argComputerMove, argPlayerMove) {
 
         console.log('moves:', argComputerMove, argPlayerMove);
 
