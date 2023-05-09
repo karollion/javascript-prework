@@ -4,8 +4,8 @@ const printMessage = function(msg){
 	document.getElementById('messages').appendChild(div);
 }
 
-const clearMessages = function(){
-	document.getElementById('messages').innerHTML = '';
+const clearMessages = function(elementId){
+	document.getElementById(elementId).innerHTML = '';
 }
 
 const printResult = function(msg){
@@ -14,16 +14,8 @@ const printResult = function(msg){
 	document.getElementById('result').appendChild(div);
 }
 
-const clearResult = function(){
-	document.getElementById('result').innerHTML = '';
-}
-
 const printRound = function(msg){
 	let div = document.createElement('p');
 	div.innerHTML = msg;
 	document.getElementById('round').appendChild(div);
-}
-
-const clearRound = function(){
-	document.getElementById('round').innerHTML = '';
 }

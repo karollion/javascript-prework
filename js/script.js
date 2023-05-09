@@ -1,8 +1,8 @@
 {
 const playGame = function(playerInput) {
-    clearMessages();
-    clearResult();
-    clearRound();
+    clearMessages('messages');
+    clearMessages('result');
+    clearMessages('round');
 
     console.log('Gracz wpisał: ' + playerInput);
 
@@ -48,38 +48,51 @@ const playGame = function(playerInput) {
         }
     }
 
-    let randomNumber = Math.floor(Math.random() * 3 + 1);
+    const randomNumber = Math.floor(Math.random() * 3 + 1);
     console.log('Wylosowana liczba to: ' + randomNumber);
 
-    let computerMove = getMoveName(randomNumber);
+    const computerMove = getMoveName(randomNumber);
     printMessage(computerMove);
 
-    let playerMove = getMoveName(playerInput);
+    const playerMove = getMoveName(playerInput);
     printMessage(playerMove);
 
     displayResult(computerMove, playerMove);
     
-    let score = (pointsComputer + ' - ' + pointsPlayer);
+    const score = (pointsComputer + ' - ' + pointsPlayer);
     printResult(score);
 
     rounds ++;
     printRound(rounds);
 }
 
+const startGame = function(move, idMove){
+    document.getElementById(move).addEventListener('click', function(){
+        playGame(idMove);
+    });
+}
+
 let pointsComputer = 0,
     pointsPlayer = 0,
     rounds = 0;
 
+const rock = startGame('play-rock', 1),
+    paper = startGame('play-paper', 2),
+    scissors = startGame('play-scissors', 3);
 
-document.getElementById('play-rock').addEventListener('click', function(){
-    playGame(1);
-});
+rock;
+paper;
+scissors;
 
-document.getElementById('play-paper').addEventListener('click', function(){
-    playGame(2);
-});
+// document.getElementById('play-rock').addEventListener('click', function(){
+//     playGame(1);
+// });
 
-document.getElementById('play-scissors').addEventListener('click', function(){
-    playGame(3);
-});
+// document.getElementById('play-paper').addEventListener('click', function(){
+//     playGame(2);
+// });
+
+// document.getElementById('play-scissors').addEventListener('click', function(){
+//     playGame(3);
+// });
 }
