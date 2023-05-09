@@ -52,17 +52,14 @@ const playGame = function(playerInput) {
     console.log('Wylosowana liczba to: ' + randomNumber);
 
     const computerMove = getMoveName(randomNumber);
-    printMessage(computerMove, 'messages');
-
     const playerMove = getMoveName(playerInput);
-    printMessage(playerMove, 'messages');
-
     displayResult(computerMove, playerMove);
-    
     const score = (pointsComputer + ' - ' + pointsPlayer);
-    printMessage(score, 'result');
-
+    
     rounds ++;
+    printMessage(playerMove, 'messages');
+    printMessage(computerMove, 'messages');
+    printMessage(score, 'result');
     printMessage(rounds, 'round');
 }
 
@@ -72,27 +69,15 @@ const startGame = function(move, idMove){
     });
 }
 
-let pointsComputer = 0,
-    pointsPlayer = 0,
-    rounds = 0;
-
 const rock = startGame('play-rock', 1),
     paper = startGame('play-paper', 2),
     scissors = startGame('play-scissors', 3);
 
+let pointsComputer = 0,
+    pointsPlayer = 0,
+    rounds = 0;
+
 rock;
 paper;
 scissors;
-
-// document.getElementById('play-rock').addEventListener('click', function(){
-//     playGame(1);
-// });
-
-// document.getElementById('play-paper').addEventListener('click', function(){
-//     playGame(2);
-// });
-
-// document.getElementById('play-scissors').addEventListener('click', function(){
-//     playGame(3);
-// });
 }
